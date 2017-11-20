@@ -1,2 +1,3 @@
 include ':03-junit', ':04-linked-list', ':05-persons', ':06-inheritance-composition', ':07-generics',
-	':11-enums'
+	':11-enums', ':12-input-output', ':13-collections-lists', ':14-collections-maps', 
+	':15-lambdas-simple', ':16-lambdas-collections'
