@@ -1,1 +1,1 @@
-include ':03-junit', ':04-linked-list', ':05-persons', ':06-inheritance-composition'
+include ':03-junit', ':04-linked-list', ':05-persons', ':06-inheritance-composition', ':07-generics'
