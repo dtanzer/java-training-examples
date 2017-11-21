@@ -8,16 +8,20 @@ public class LinkedList {
 		return size;
 	}
 
-	public void add(String item) {
+	public void add(String content) {
 		size++;
 		if(head == null) {
-			head = new ListItem(item);
+			head = new ListItem(content);
 		} else {
-			end().setNext(new ListItem(item));
+			end().append(new ListItem(content));
 		}
 	}
 	
 	public ListItem end() {
+		if(head == null) {
+			return null;
+		}
+		
 		ListItem current = head;
 		while(current.next() != null) {
 			current = current.next();

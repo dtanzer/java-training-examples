@@ -57,6 +57,13 @@ public class LinkedListTest {
 	}
 	
 	@Test
+	public void endIsNullWhenListIsEmpty() {
+		LinkedList list = new LinkedList();
+		ListItem end = list.end();
+		assertNull(end);
+	}
+	
+	@Test
 	public void insertsIntoMiddleOfList() {
 		LinkedList list = new LinkedList();
 		list.add("one");

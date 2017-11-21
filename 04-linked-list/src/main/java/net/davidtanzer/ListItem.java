@@ -17,14 +17,14 @@ public class ListItem {
 		return next;
 	}
 
-	void setNext(ListItem next) {
+	void append(ListItem next) {
 		this.next = next;
 	}
 
 	public void insert(String content) {
 		ListItem oldNext = next;
 		next = new ListItem(content);
-		next.setNext(oldNext);
+		next.append(oldNext);
 	}
 
 }
