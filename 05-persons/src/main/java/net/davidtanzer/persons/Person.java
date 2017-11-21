@@ -1,78 +1,56 @@
 package net.davidtanzer.persons;
 
 public class Person {
+	private final String ssn;
 	private String firstName;
 	private String lastName;
 	private int age;
 
-	public Person(String firstName, String lastName, int age) {
+	public Person(String ssn, String firstName, String lastName, int age) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
+		this.ssn = ssn;
 	}
 	
 	@Override
 	public String toString() {
 		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + "]";
 	}
+
 	
 	@Override
-	public boolean equals(Object o) {
-		Person other = (Person) o;
-		if(other != null && other instanceof Person) {
-			if(this.firstName==null && other.firstName != null) {
-				return false;
-			}
-			if(!this.firstName.equals(other.firstName)) {
-				return false;
-			}
-			
-			if(this.lastName==null && other.lastName != null) {
-				return false;
-			}
-			if(!this.lastName.equals(other.lastName)) {
-				return false;
-			}
-			
-			if(this.age != other.age) {
-				return false;
-			}
-			
-			return true;
-		}
-		return false;
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((ssn == null) ? 0 : ssn.hashCode());
+		return result;
 	}
 
 	@Override
-	public int hashCode() {
-		int hashCode = 13*age;
-		
-		if(firstName != null) {
-			hashCode += 17*firstName.hashCode();
-		}
-		if(lastName != null) {
-			hashCode += 31*lastName.hashCode();
-		}
-		
-		return hashCode;
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (ssn == null) {
+			if (other.ssn != null)
+				return false;
+		} else if (!ssn.equals(other.ssn))
+			return false;
+		return true;
 	}
-	
+
 	public String getFirstName() {
 		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
 	}
 	public String getLastName() {
 		return lastName;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
 	public int getAge() {
 		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
 	}
 }
