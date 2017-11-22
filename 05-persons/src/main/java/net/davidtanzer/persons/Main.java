@@ -4,8 +4,8 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("Persons...");
 		
-		Person person1 = new Person("David", "Tanzer", 38);
-		Person person2 = new Person("David", "Tanzer", 38);
+		Person person1 = new Person("ssn1", "David", "Tanzer", 38);
+		Person person2 = new Person("ssn1", "David", "Tanzer", 38);
 		System.out.println(person1);
 		System.out.println(person1 + " equal " + person2 + "? -> " + person1.equals(person2));
 
