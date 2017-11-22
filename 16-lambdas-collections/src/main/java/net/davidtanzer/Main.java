@@ -7,7 +7,6 @@ import java.util.Map;
 
 public class Main {
 	private static List<Person> persons = new ArrayList<>();
-	private static Map<Address, List<Person>> addresses = new HashMap<>();
 	
 	public static void main(String[] args) {
 		addPerson("Elisabeth", "High Street", "25");
@@ -21,12 +20,14 @@ public class Main {
 			System.out.println("\t"+p);
 		}
 		
-		for(Address a : addresses.keySet()) {
-			System.out.println("Persons living in "+a);
-			for(Person p : addresses.get(a)) {
-				System.out.println("\t"+p);
-			}
-		}
+		//FIXME How to achieve this without the addresses map?
+		//HINT use collection streams and lambdas...
+//		for(Address a : addresses.keySet()) {
+//			System.out.println("Persons living in "+a);
+//			for(Person p : addresses.get(a)) {
+//				System.out.println("\t"+p);
+//			}
+//		}
 	}
 
 	private static void addPerson(String name, String street, String streetNo) {
@@ -34,9 +35,5 @@ public class Main {
 		Person p = new Person(name, a);
 		
 		persons.add(p);
-		if(!addresses.containsKey(a)) {
-			addresses.put(a, new ArrayList<Person>());
-		}
-		addresses.get(a).add(p);
 	}
 }
