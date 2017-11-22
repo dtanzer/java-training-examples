@@ -1,8 +1,6 @@
 package net.davidtanzer;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
 public class LinkedListTest {
 	/*
