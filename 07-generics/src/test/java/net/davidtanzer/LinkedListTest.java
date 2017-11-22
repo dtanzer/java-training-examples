@@ -44,6 +44,18 @@ public class LinkedListTest {
 	}
 	
 	@Test
+	public void listsAndItemsWorkWithIntegers() {
+		LinkedList<Integer> list = new LinkedList<>();
+		list.add(1);
+		list.add(2);
+		
+		ListItem<Integer> head = list.head();
+		
+		assertNotNull(head.next());
+		assertEquals(2, (int) head.next().content());
+	}
+	
+	@Test
 	public void endReturnsLastListItem() {
 		LinkedList<String> list = new LinkedList<>();
 		list.add("one");
@@ -70,7 +82,7 @@ public class LinkedListTest {
 		assertEquals("two", head.next().next().content());
 	}
 	
-	@Test
+	
 	public void extendsSuperTes() {
 		LinkedList<? extends Number> l1 = new LinkedList<Integer>();
 		
